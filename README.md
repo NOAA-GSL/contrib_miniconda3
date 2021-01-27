@@ -11,6 +11,7 @@ conda environments including:
   - pygraf, a Python 3 graphics support environment
   - regional_workflow, a Python 3 environment for the ufs-srweather-app
   - spp_vx, a Python 3 data handling and graphics environment
+  - ufs-weather-model, a Python 3 environment for the ufs-weather-model regression testing
 
 
 ## Installation (except NOAA RDHPC gaea)
