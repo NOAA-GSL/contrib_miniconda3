@@ -19,7 +19,7 @@ if {$shell == "csh"} {
 }
 
 if { [module-info mode load] } {
-  system "source $base/etc/profile.d/$conda_file"
+  puts "source $base/etc/profile.d/$conda_file;"
 }
 
 if {[module-info mode remove]} {
@@ -27,23 +27,23 @@ if {[module-info mode remove]} {
     set layers $env(CONDA_SHLVL)
 
     if {$shell == "csh"} {
-        set loaded [system "alias | grep conda -q"]
+        set loaded [puts "alias | grep conda -q;"]
         if { $loaded == 1 } {
-            system "source $base/etc/profile.d/$conda_file"
+            puts "source $base/etc/profile.d/$conda_file;"
         }
     } else {
-        system "source $base/etc/profile.d/$conda_file"
+        puts "source $base/etc/profile.d/$conda_file;"
     }
 
     while {$layers > 0} {
-        system "conda deactivate"
+        puts "conda deactivate;"
         set layers [expr {$layers - 1}]
     }
 
     if {$shell == "csh"} {
-        system "unalias conda"
+        puts "unalias conda;"
     } else {
-        system "unset conda"
+        puts "unset conda;"
     }
 }
 
